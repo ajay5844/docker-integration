@@ -1,4 +1,4 @@
-FROM openjdk
+FROM tomcat
 EXPOSE 8080
-ADD /target/deocker-jenkins.jar /deocker-jenkins.jar
-ENTRYPOINT ["java","-jar","/deocker-jenkins.jar"]
+COPY /target/deocker-jenkins.war /usr/local/tomcat/webapps/deocker-jenkins.war
+ENTRYPOINT ["catalina.sh", "run"]
