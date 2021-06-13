@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk
 EXPOSE 8080
-ADD terget/maven-web-project-1.0.jar /maven-web-project-1.0.jar
-ENTRYPOINT ["java","-jar","/maven-web-project-1.0.jar"]
+ADD /var/lib/jenkins/workspace/jenkins-docker/target/deocker-jenkins.jar /deocker-jenkins.jar
+ENTRYPOINT ["java","-jar","/deocker-jenkins.jar"]
